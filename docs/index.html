@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AquaNXT · one brain, three filters</title>
+<meta name="description" content="AquaNXT is a family of gravity water filters that tell you, with measured numbers, how they are doing. Home for kitchens, Go for the field, Station for schools. A Rajalakshmi Engineering College project for ASU Venture X 2026.">
+<meta name="theme-color" content="#e8e1d3">
+<meta property="og:title" content="AquaNXT · one brain, three filters">
+<meta property="og:description" content="Gravity water filters that explain themselves. Home, Go and Station, with Neer, the on-board assistant that never says 'safe' without evidence.">
+<meta property="og:image" content="https://shyamvasansathiskumar-ux.github.io/aquanxt/og.png">
+<meta property="og:url" content="https://shyamvasansathiskumar-ux.github.io/aquanxt/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://shyamvasansathiskumar-ux.github.io/aquanxt/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8e1d3'/%3E%3Cpath d='M32 10C24 22 18 30 18 38a14 14 0 0 0 28 0c0-8-6-16-14-28z' fill='%230b7a75'/%3E%3C/svg%3E">
+<link rel="preload" href="cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add("js")</script>
+<script type="importmap">{ "imports": { "three": "./three.module.min.js" } }</script>
+</head>
+<body>
+<div class="loader" aria-hidden="true">
+  <div class="who"><span class="label bare">AquaNXT · நீர்</span><span class="label bare">REC Chennai</span></div>
+  <div class="n"><b>00</b><sup>%</sup></div>
+</div>
+<canvas id="world" aria-hidden="true"></canvas>
+<ol class="rail" aria-label="Chapters"></ol>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot"></span>Aqua<span class="nxt">NXT</span></a>
+    <ul>
+      <li><a href="#need">The need</a></li>
+      <li><a href="#prototypes">Prototypes</a></li>
+      <li><a href="#neer">Neer</a></li>
+      <li><a href="#status">Status</a></li>
+    </ul>
+    <a class="btn sm ghost" href="https://github.com/shyamvasansathiskumar-ux/aquanxt" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 00 · hero -->
+  <section class="hero" id="hero" data-stage="0" data-chapter="AquaNXT">
+    <div class="wrap hero-in">
+      <p class="label" data-intro>Water · Hardware · On-device AI · In progress</p>
+      <h1 class="display hero-title" data-intro-split>Aqua<em>NXT</em></h1>
+      <p class="hero-tamil" data-intro><span class="tamil">நீர்</span> <span class="sep"></span> one brain, <em>three filters</em></p>
+      <div class="hero-foot">
+        <p class="lede" data-intro>Gravity water filters that <strong>tell you how they're doing</strong>, with measured numbers instead of a timer and a guess. For a kitchen, a backpack and a school.</p>
+      </div>
+      <div class="hero-cta" data-intro>
+        <a class="btn acc" href="#prototypes">See the three prototypes <span class="arr">→</span></a>
+        <a class="btn ghost" href="#neer">Meet Neer</a>
+      </div>
+    </div>
+    <div class="wrap hero-meta" data-intro>
+      <span class="label bare">3 prototypes</span><span class="label bare">Filters with no power</span><span class="label bare">ASU Venture X 2026</span><span class="label bare scroll-cue">Scroll</span>
+    </div>
+  </section>
+
+  <!-- 01 · need -->
+  <section id="need" data-stage="1" data-chapter="The need">
+    <div class="wrap grid">
+      <div class="col-l"><p class="label" data-scramble>01 · The need</p></div>
+      <div class="col-r stack">
+        <h2 class="h1" data-split>The tap arrived. <em>Nobody checks the glass.</em></h2>
+        <p class="body big" data-rise>Most Indian homes now have a tap. That's the good news. The harder problem is what comes out of it: supply that stops and starts, and water that is sometimes contaminated, with nobody checking it at the point where people actually drink.</p>
+        <div class="stats" data-stagger>
+          <div class="stat"><b data-count="81.71" data-dec="2">81.71</b><span>% of rural households had a tap connection by March 2026</span><a href="https://www.newkerala.com/news/a/8171-pc-rural-households-tap-water-supply-somanna-583.htm" target="_blank" rel="noopener">Jal Jeevan Mission, via NewKerala ↗</a></div>
+          <div class="stat"><b>1 in 4</b><span>households weren't free of bacterial contamination in the same assessment</span><a href="https://www.newkerala.com/news/a/8171-pc-rural-households-tap-water-supply-somanna-583.htm" target="_blank" rel="noopener">Same assessment ↗</a></div>
+          <div class="stat"><b data-count="462220">462,220</b><span>diarrhoeal deaths in India in 2023</span><a href="https://www.sciencedirect.com/science/article/pii/S2052297526000685" target="_blank" rel="noopener">GBD 2023 ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track" data-speed="46"><span>Gravity filters</span><span>Measured, not guessed</span><span>Fails closed</span><span>Never says "safe"</span><span>Home · Go · Station</span></div></div>
+
+  <!-- 02 · prototypes -->
+  <section id="prototypes" data-stage="2" data-chapter="Prototypes">
+    <div class="wrap">
+      <div class="head-row">
+        <p class="label" data-scramble>02 · Three prototypes</p>
+        <h2 class="h1" data-split>One product line, <em>three places.</em></h2>
+        <p class="body" data-rise>Pick one. The model behind this page changes with it. Drag it to turn it.</p>
+      </div>
+      <div class="proto">
+        <div class="tabs" role="tablist" aria-label="Prototype" data-stagger>
+          <button class="tab" role="tab" aria-selected="true" data-p="home"><span class="mono">01</span><b>Home</b><small>Countertop · the main prototype</small></button>
+          <button class="tab" role="tab" aria-selected="false" data-p="go"><span class="mono">02</span><b>Go</b><small>Carry kit · hangs from any hook</small></button>
+          <button class="tab" role="tab" aria-selected="false" data-p="station"><span class="mono">03</span><b>Station</b><small>Solar biosand · for schools</small></button>
+        </div>
+        <div class="stagebox" id="stagebox" data-hot aria-hidden="true"><span class="drag mono">drag to turn</span></div>
+        <article class="pcard card" id="pcard" aria-live="polite"></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · neer -->
+  <section id="neer" class="ink-band" data-stage="3" data-chapter="Neer">
+    <div class="wrap grid">
+      <div class="col-l stack">
+        <p class="label" data-scramble>03 · Neer, the on-board assistant</p>
+        <h2 class="h2" data-split>The filter that tells you <em>what it knows.</em></h2>
+        <p class="body" data-rise>Neer (<span class="tamil">நீர்</span>, "water") shows a face and one short line. Every line comes from something it measured. When it isn't sure, it says so. It never says the water is "safe".</p>
+        <ul class="neer-points" data-stagger>
+          <li><b>It explains itself.</b> Not just a red light: what it saw, and what to do.</li>
+          <li><b>It forecasts.</b> "About 40 days left" from how the filter is actually wearing, not a fixed timer.</li>
+          <li><b>It knows its limits.</b> Doubtful data turns the light amber, never green.</li>
+          <li><b>It doesn't do the filtering.</b> Gravity does. Neer watches, explains and locks.</li>
+        </ul>
+      </div>
+      <div class="col-r">
+        <div class="neer card" data-rise>
+          <div class="bezel"><canvas id="face" width="128" height="64" aria-label="Neer's face"></canvas></div>
+          <div class="neer-row"><span class="ring" id="ring"></span><b class="neer-line" id="nline">All checks passed</b></div>
+          <p class="neer-msg" id="nmsg"></p>
+          <div class="scen" id="scen" role="group" aria-label="Try a situation"></div>
+          <p class="fine-ink">A simplified demo of Neer's behaviour with made-up readings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · honest -->
+  <section id="honest" data-stage="4" data-chapter="Honest claims">
+    <div class="wrap">
+      <div class="head-row">
+        <p class="label" data-scramble>04 · What we will and won't claim</p>
+        <h2 class="h1" data-split>Every claim waits for <em>a lab result.</em></h2>
+      </div>
+      <div class="duo">
+        <div class="card claim yes" data-rise><h3 class="h3">After testing, we'll report</h3><ul>
+          <li>Bacteria reduction, with the exact number an NABL-accredited lab measures (E. coli and total coliform), not a hoped-for one.</li>
+          <li>Litres treated and filter life, from measured data.</li>
+          <li>That filtering needs no power, and the electronics fail closed.</li>
+          <li>Each stress test we actually ran, on film.</li></ul></div>
+        <div class="card claim no" data-rise=".1"><h3 class="h3">We won't claim</h3><ul>
+          <li>Virus removal, until it is tested.</li>
+          <li>Removing dissolved salts, arsenic or fluoride. These filters don't.</li>
+          <li>That Neer detects germs. No low-cost real-time germ sensor exists.</li>
+          <li>"Safe", "pure", or "withstands anything".</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · status -->
+  <section id="status" data-stage="5" data-chapter="Status">
+    <div class="wrap grid">
+      <div class="col-l stack">
+        <p class="label" data-scramble>05 · Where it stands</p>
+        <h2 class="h2" data-split>Building now. <em>Results in November.</em></h2>
+        <p class="body" data-rise>AquaNXT is a work in progress. Designs are done in CAD; the prototypes, the Station's 30-day biolayer and the lab tests are under way for the ASU Venture X final.</p>
+        <div class="count card" data-rise><b id="days">–</b><span>days to the Venture X final in Tempe, 16 Nov 2026</span></div>
+      </div>
+      <div class="col-r">
+        <ol class="timeline" data-stagger>
+          <li class="done"><span class="mono">Sep</span><div><b>Design</b><p>Three prototypes modelled in 3D and CAD. Loophole review: every weak point has a fix.</p></div></li>
+          <li class="now"><span class="mono">Oct</span><div><b>Build Home, start Station</b><p>Home goes together and logs a week of real use. Station's sand column starts its daily feeding so the biolayer can mature.</p></div></li>
+          <li><span class="mono">20 Oct</span><div><b>Cut line</b><p>If Home is on track, Go gets built. If not, Go stays a CAD model and every hour goes to Home.</p></div></li>
+          <li><span class="mono">Nov</span><div><b>Lab results</b><p>Samples to an NABL lab. The numbers go into the pitch exactly as measured.</p></div></li>
+          <li><span class="mono">16–22 Nov</span><div><b>Venture X final, Tempe</b><p>Prototypes, models and measured results.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Aqua<em>NXT</em>.</p>
+    <div class="row">
+      <div class="links">
+        <a class="btn acc" href="https://github.com/shyamvasansathiskumar-ux/aquanxt" target="_blank" rel="noopener">Project on GitHub <span class="arr">↗</span></a>
+        <a class="btn ghost" href="https://shyamvasansathiskumar-ux.github.io/kaaval/">Kaaval <span class="arr">→</span></a>
+        <a class="btn ghost" href="https://shyamvasansathiskumar-ux.github.io/kaappu/">Kaappu <span class="arr">→</span></a>
+        <a class="btn ghost" href="https://shyamvasansathiskumar-ux.github.io/fairdoor/">FairDoor <span class="arr">→</span></a>
+      </div>
+      <small>A Rajalakshmi Engineering College project · Chennai · 2026<br>Internal designs are kept private until the patent filing.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="gsap.min.js"></script>
+<script src="ScrollTrigger.min.js"></script>
+<script src="SplitText.min.js"></script>
+<script src="ScrambleTextPlugin.min.js"></script>
+<script src="lenis.min.js"></script>
+<script src="motion.js"></script>
+<script src="app.js"></script>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
